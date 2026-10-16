@@ -19,6 +19,10 @@ class Modalidade(models.Model):
     class Meta:
         verbose_name = 'Modalidade'
         verbose_name_plural = 'Modalidades'
+    
+    @property
+    def qnt_atletas(self):
+        return self.atletas.count()
 
 
 class Equipe(models.Model):
